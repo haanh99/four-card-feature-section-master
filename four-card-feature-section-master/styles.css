@@ -1,0 +1,122 @@
+:root{
+
+    --primary-Red: hsl(0, 78%, 62%);
+    --primary-Cyan: hsl(180, 62%, 55%);
+    --primary-Orange: hsl(34, 97%, 64%);
+    --primary-Blue: hsl(212, 86%, 64%);
+
+    --neutral-Dark-Blue: hsl(234, 12%, 34%);
+    --neutral-Grayish-Blue: hsl(229, 6%, 66%);
+    --neutral-Light-Gray: hsl(0, 0%, 98%);
+
+    --primary-font: "Poppins", sans-serif;
+    --fw-light: 200;
+    --fw-normal:400;
+    --fw-bold: 600;
+
+    --fs-400: 0.9275rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.625rem;
+    --fs-900: 2.5rem;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+html{
+    font-family: var(--primary-font);
+    font-weight: var(--fw-normal);
+    line-height: 1.7;
+}
+body{
+    margin: 0;
+    background-color: var(--neutral-Light-Gray);
+   
+}
+h1,h2,h3{
+    color: var(--neutral-Dark-Blue);
+    line-height: 1.1;
+}
+.wrapper{
+    margin-inline: auto;
+    max-width: 1100px;
+    padding-inline: 2rem;
+}
+.wrapper--narrow{
+    max-width: 550px;
+}
+header{
+    text-align: center;
+    margin-block: 6rem;
+}
+header > p{
+    font-size: var(--fs-500);
+}
+h1{
+    font-size: var(--fs-900);
+    font-weight: var(--fw-light);
+}
+h1 span{
+    font-weight: var(--fw-bold);
+}
+.layout--grid{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        'one'
+        'two'
+        'three'
+        'four'
+    ;
+}
+@media (min-width: 800px){
+    .layout--grid{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        '. two .'
+        'one two four'
+        'one three four'
+        '. three .'
+        ;
+    }
+}
+
+.card{
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow:  1rem 1rem 1rem -0.5rem rgb(223, 231, 241);
+    border-top: 10px solid;
+    border-radius: 0.5rem;
+}
+.card:nth-child(1){
+    grid-area: one;
+}
+.card:nth-child(2){
+    grid-area: two;
+}
+.card:nth-child(3){
+    grid-area: three;
+}
+.card:nth-child(4){
+    grid-area: four;
+}
+.card__img{
+    display: block;
+    margin-left: auto;
+    margin-top: 1rem;
+}
+.border--steal{
+    border-top-color: var(--primary-Cyan);
+}
+.border--red{
+    border-top-color: var(--primary-Red);
+}
+.border--yellow{
+    border-top-color: var(--primary-Orange);
+}
+.border--blue{
+    border-top-color: var(--primary-Blue);
+}
+.card--title{
+    margin: 0;
+}
